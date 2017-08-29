@@ -1,0 +1,43 @@
+<style>
+    #app_header{
+    	position:relative;
+    	padding:0 10px;
+    	text-align: center;
+    	line-height: 44px;
+    	font-size:14px;
+    	border-bottom: 1px solid #ddd;
+    	background-color:#efefef;
+    }
+
+    #app_header .swiper_tab>a{
+    	display: inline-block;
+    	padding:0 30px;
+    }
+     #app_header .swiper_tab>a.cur{
+     	color:orange;
+     }
+     
+     .i_tab{
+     	position: absolute;
+     	bottom: 0;
+     	height: 2px;
+     	background-color:#AAA;
+     	left:50%;
+     	width: 32px;
+     	transition: all 0.3s
+     }
+     .i_tab_1{
+     	transform:translateX(-62px);
+     }
+
+     .i_tab_2{
+     	transform:translateX(32px);
+     }
+</style>
+<div class="header-tab" id="app_header">
+   <div class="swiper_tab swiper_tab_1 f-cb">
+         <a class="tab_1 cur" href="javascirpt:void(0);">书城</a>
+         <a class="tab_2" href="javascirpt:void(0);">书架</a>
+         <i class=" i_tab i_tab_1"></i>
+   </div>
+</div>
