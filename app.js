@@ -49,6 +49,34 @@ app.use(controller.get('/search',function*(){
     });
 }));
 
+app.use(controller.get('/male',function*(){
+	this.set('Cathe-Control','no-cache');
+    this.body = yield render('male',{
+    	 title:'男生'
+    });
+}));
+
+app.use(controller.get('/female',function*(){
+	this.set('Cathe-Control','no-cache');
+    this.body = yield render('female',{
+    	 title:'女生'
+    });
+}));
+
+app.use(controller.get('/category',function*(){
+	this.set('Cathe-Control','no-cache');
+    this.body = yield render('category',{
+    	 title:'分类'
+    });
+}));
+
+app.use(controller.get('/rank',function*(){
+	this.set('Cathe-Control','no-cache');
+    this.body = yield render('rank',{
+    	 title:'排行榜'
+    });
+}));
+
 app.use(controller.get('/book',function*(){
 	this.set('Cathe-Control','no-cache');
 	var params = querystring.parse(this.req._parsedUrl.query);

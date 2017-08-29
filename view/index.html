@@ -6,11 +6,21 @@
 		<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 		<title>书城首页</title>
+		<style>
+           #home_container{
+           	  width:375px;
+           	  height: 623px;
+           	  position: relative;
+           	  top:0px;
+           	  overflow-x:hidden;
+           	  overflow-y:scroll;
+           }
+		</style>
 	</head>
 	<body>
 		<div id="app" >
 			<% include include/header.html %>
-			<div>
+			<div id="home_container">
 			<% include include/index-top.html %>
 			<% include include/index-hot.html %>
 			<% include include/index-recommend.html %>
