@@ -36,8 +36,8 @@
 </style>
 <div class="header-tab" id="app_header">
    <div class="swiper_tab swiper_tab_1 f-cb">
-         <a class="tab_1 cur" href="javascirpt:void(0);"></a>
-         <a class="tab_2" href="javascirpt:void(0);"></a>
-         <i class=" i_tab i_tab_1"></i>
+         <a class="tab_1 {{header_tab1}}" href="javascirpt:void(0);" v-on:click="tabSwitch(1)"></a>
+         <a class="tab_2 {{header_tab2}}" href="javascirpt:void(0);" v-on:click="tabSwitch(2)"></a>
+         <i class=" i_tab {{i_tab}}"></i>
    </div>
 </div>

@@ -77,6 +77,13 @@ app.use(controller.get('/rank',function*(){
     });
 }));
 
+app.use(controller.get('/reader',function*(){
+    this.set('Cathe-Control','no-cache');
+    this.body = yield render('reader',{
+         title:'阅读器'
+    });
+}));
+
 app.use(controller.get('/book',function*(){
 	this.set('Cathe-Control','no-cache');
 	var params = querystring.parse(this.req._parsedUrl.query);
@@ -103,12 +110,28 @@ app.use(controller.get('/ajax/rank',function*(){
 app.use(controller.get('/ajax/book',function*(){
 	this.set('Cathe-Control','no-cache');	
 	var params = querystring.parse(this.req._parsedUrl.query);
-	var id = params.keyworid;
+	var id = params.id;
 	if(!id){
 		 id = "";
 	}
     this.body = service.get_book_data(id);
 }));
+
+app.use(controller.get('/ajax/chapter', function*(){
+    this.set('Cache-Control', 'no-cache');
+    this.body = service.get_chapter_data();
+}));
+
+app.use(controller.get('/ajax/chapter_data', function*(){
+    this.set('Cache-Control', 'no-cache');
+    var params = querystring.parse(this.req._parsedUrl.query);
+    var id = params.id;
+    if(!id){
+       id = "";
+    }
+    this.body = service.get_chapter_content_data(id);
+}));
+
 
 app.use(controller.get('/ajax/search',function*(){
 	this.set('Cathe-Control','no-cache');

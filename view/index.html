@@ -8,26 +8,47 @@
 		<title>书城首页</title>
 		<style>
            #home_container{
-           	  width:375px;
+           	  width:200%;
            	  height: 623px;
            	  position: relative;
            	  top:0px;
            	  overflow-x:hidden;
-           	  overflow-y:scroll;
+           	  overflow-y:hidden;
+           	  transition: all 0.5s
+           }
+           #home_container.tab_1{
+           	  transform:translateX(0%);
+           }
+            #home_container.tab_2{
+           	  transform:translateX(-50%);
+           }
+           #home_container>div{
+           	      width: 50%;
+    display: inline-block;
+    height: 100%;
+    color: #000;
+    overflow-x: hidden;
+    float: left;
+    overflow-y: scroll;
            }
 		</style>
 	</head>
 	<body>
 		<div id="app" >
 			<% include include/header.html %>
-			<div id="home_container">
+			<div id="home_container" class="{{home_container_tab}}"> 
+			  <div>
 			<% include include/index-top.html %>
 			<% include include/index-hot.html %>
 			<% include include/index-recommend.html %>
 			<% include include/index-female.html %>
 			<% include include/index-male.html %>
 			<% include include/index-free.html %>
-			<% include include/index-bottom.html %>      
+			<% include include/index-bottom.html %> 
+			</div>
+			<div>
+			<% include include/index-shelf.html %> 
+			</div>     
 			</div>
 		</div>
 	</body>
